@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import re
 from collections import defaultdict
 from typing import Dict, List, Tuple
+import os
 
 if not os.path.exists('processed_with_params.xlsx'):
     st.error("❌ Файл не найден! Доступные файлы: " + ", ".join(os.listdir()))
