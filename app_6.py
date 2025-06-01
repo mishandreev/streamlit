@@ -10,9 +10,7 @@ import openpyxl
 # Загрузка данных
 @st.cache_data
 def load_data() -> pd.DataFrame:
-    # Получаем путь к папке со скриптом
-    file_path = ('processed_with_params.xlsx')
-    excel_file = pd.ExcelFile(file_path)
+    excel_file = pd.ExcelFile(processed_with_params.xlsx)
     materials = excel_file.parse('Материалы')
     equipment = excel_file.parse('Оборудование')
     mechanisms = excel_file.parse('Механизмы')
