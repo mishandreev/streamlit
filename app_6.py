@@ -11,8 +11,7 @@ import openpyxl
 @st.cache_data
 def load_data() -> pd.DataFrame:
     # Получаем путь к папке со скриптом
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(script_dir, 'processed_with_params.xlsx')
+    file_path = ('processed_with_params.xlsx')
     excel_file = pd.ExcelFile(file_path)
     materials = excel_file.parse('Материалы')
     equipment = excel_file.parse('Оборудование')
