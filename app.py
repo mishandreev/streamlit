@@ -5,6 +5,12 @@ import re
 from collections import defaultdict
 from typing import Dict, List, Tuple
 
+if not os.path.exists('processed_with_params.xlsx'):
+    st.error("❌ Файл не найден! Доступные файлы: " + ", ".join(os.listdir()))
+    st.stop()
+else:
+    st.success("✔ Файл найден! Размер: " + str(os.path.getsize('processed_with_params.xlsx')) + " байт")
+    
 # Загрузка данных
 @st.cache_data
 def load_data() -> pd.DataFrame:
