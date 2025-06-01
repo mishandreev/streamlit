@@ -5,12 +5,12 @@ import re
 from collections import defaultdict
 from typing import Dict, List, Tuple
 import os
+import openpyxl
 
-os.system("streamlit run app_6.py --server.address=0.0.0.0 --server.port=8501")
 # Загрузка данных
 @st.cache_data
 def load_data() -> pd.DataFrame:
-    excel_file = pd.ExcelFile('c:/Users/misha/OneDrive/Рабочий стол/a/processed_with_params.xlsx')
+    excel_file = pd.ExcelFile('processed_with_params.xlsx')
     materials = excel_file.parse('Материалы')
     equipment = excel_file.parse('Оборудование')
     mechanisms = excel_file.parse('Механизмы')
