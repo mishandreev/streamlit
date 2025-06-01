@@ -6,7 +6,7 @@ from collections import defaultdict
 from typing import Dict, List, Tuple
 import os
 
-if not os.path.exists('processed_with_params.xlsx'):
+if not os.path.exists('data.xlsx'):
     st.error("❌ Файл не найден! Доступные файлы: " + ", ".join(os.listdir()))
     st.stop()
 else:
