@@ -10,12 +10,12 @@ if not os.path.exists('processed_with_params.xlsx'):
     st.error("❌ Файл не найден! Доступные файлы: " + ", ".join(os.listdir()))
     st.stop()
 else:
-    st.success("✔ Файл найден! Размер: " + str(os.path.getsize('processed_with_params.xlsx')) + " байт")
+    st.success("✔ Файл найден! Размер: " + str(os.path.getsize('data.xlsx')) + " байт")
     
 # Загрузка данных
 @st.cache_data
 def load_data() -> pd.DataFrame:
-    excel_file = pd.ExcelFile('processed_with_params.xlsx')
+    excel_file = pd.ExcelFile('data.xlsx')
     materials = excel_file.parse('Материалы')
     equipment = excel_file.parse('Оборудование')
     mechanisms = excel_file.parse('Механизмы')
