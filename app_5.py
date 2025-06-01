@@ -39,7 +39,8 @@ def load_data() -> pd.DataFrame:
     param_cols = [col for col in df.columns if col not in ['Код', 'Наименование', 'Единица измерения', 'ОКПД2', 'Теги', 'Тип ресурса']]
     df['Имеет параметры'] = df[param_cols].apply(lambda row: any(val not in [0, 'Не указано'] for val in row), axis=1)
 
-    return df.head(10_000)
+    return df
+    
 
 df = load_data()
 
